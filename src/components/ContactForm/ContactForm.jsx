@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
+import { Form, Button } from './ContactForm.styled';
 
 class ContactForm extends Component {
   state = {
@@ -21,7 +22,7 @@ class ContactForm extends Component {
       console.log('state 1:', this.state);
     }, 1000);
     // Доступ до даних форми під час її сабміту
-    this.props.onSubmit(this.state);
+    this.props.onSubmit(this.state.name);
 
     this.reset();
   };
@@ -34,7 +35,7 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
+      <Form onSubmit={this.onFormSubmit}>
         <label htmlFor={this.nameInputId}>
           Name
           <input
@@ -48,10 +49,10 @@ class ContactForm extends Component {
             id={this.nameInputId}
           />
         </label>
-        <button type="submit" aria-label="Add contact">
+        <Button type="submit" aria-label="Add contact">
           Add contact
-        </button>
-      </form>
+        </Button>
+      </Form>
     );
   }
 }
