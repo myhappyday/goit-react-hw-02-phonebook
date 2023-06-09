@@ -5,12 +5,11 @@ import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import contacts from './data/contacts.json';
 import Filter from './Filter';
+
 class App extends Component {
   state = {
     contacts: contacts,
     filter: '',
-    name: '',
-    number: '',
   };
 
   addContact = ({ name, number }) => {
