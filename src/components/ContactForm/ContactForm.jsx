@@ -6,9 +6,11 @@ import { Form, Label, Input, Button } from './ContactForm.styled';
 class ContactForm extends Component {
   state = {
     name: '',
+    number: '',
   };
 
   nameInputId = nanoid();
+  numberInputId = nanoid();
 
   handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -22,7 +24,7 @@ class ContactForm extends Component {
       console.log('state 1:', this.state);
     }, 1000);
     // Доступ до даних форми під час її сабміту
-    this.props.onSubmit(this.state.name);
+    this.props.onSubmit(this.state);
 
     this.reset();
   };
@@ -30,6 +32,7 @@ class ContactForm extends Component {
   reset = () => {
     this.setState({
       name: '',
+      number: '',
     });
   };
 
@@ -47,6 +50,19 @@ class ContactForm extends Component {
             value={this.state.name}
             onChange={this.handleChange}
             id={this.nameInputId}
+          />
+        </Label>
+        <Label htmlFor={this.numberInputId}>
+          Number
+          <Input
+            type="tel"
+            name="number"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            required
+            value={this.state.number}
+            onChange={this.handleChange}
+            id={this.numberInputId}
           />
         </Label>
         <Button type="submit" aria-label="Add contact">

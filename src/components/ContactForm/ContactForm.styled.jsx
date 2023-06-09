@@ -13,7 +13,7 @@ export const Label = styled.label`
   font-size: 16px;
   line-height: 1.16;
   color: #797c7c;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :focus-within {
