@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-import { Form, Button } from './ContactForm.styled';
+import { Form, Label, Input, Button } from './ContactForm.styled';
 
 class ContactForm extends Component {
   state = {
@@ -36,9 +36,9 @@ class ContactForm extends Component {
   render() {
     return (
       <Form onSubmit={this.onFormSubmit}>
-        <label htmlFor={this.nameInputId}>
+        <Label htmlFor={this.nameInputId}>
           Name
-          <input
+          <Input
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -48,7 +48,7 @@ class ContactForm extends Component {
             onChange={this.handleChange}
             id={this.nameInputId}
           />
-        </label>
+        </Label>
         <Button type="submit" aria-label="Add contact">
           Add contact
         </Button>

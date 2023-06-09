@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { List } from './ContactList.styled';
 
 const ContactList = ({ contacts }) => {
   return (
-    <ul>
+    <List>
       {contacts.map(({ id, name }) => (
         <li key={id} id={id} name={name}>
           <p>{name}</p>
         </li>
       ))}
-    </ul>
+    </List>
   );
 };
 
