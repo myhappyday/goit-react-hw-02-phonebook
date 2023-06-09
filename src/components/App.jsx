@@ -12,12 +12,21 @@ class App extends Component {
     filter: '',
   };
 
+  onDuplicateContact = name => {
+    return this.state.contacts.some(contact => contact.name === name);
+  };
+
   addContact = ({ name, number }) => {
     const contact = {
       id: nanoid(),
       name,
       number,
     };
+
+    if (this.onDuplicateContact(name)) {
+      alert(`${name} is already in contacts`);
+      return;
+    }
 
     this.setState(({ contacts }) => ({
       contacts: [contact, ...contacts],
