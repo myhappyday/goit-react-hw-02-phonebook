@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ContactListItem from '../ContactListItem'
+import ContactListItem from '../ContactListItem';
 import { List } from './ContactList.styled';
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <List>
       {contacts.map(({ id, name, number }) => (
-        <ContactListItem key={id} id={id} name={name} number={number}>
+        <ContactListItem
+          key={id}
+          id={id}
+          name={name}
+          number={number}
+          onDelete={onDeleteContact}
+        >
           <p>
             <span>{name}:</span>
             <span>{number}</span>
