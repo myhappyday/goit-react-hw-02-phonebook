@@ -19,10 +19,11 @@ class ContactForm extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    console.log('state:', this.state);
-    setTimeout(() => {
-      console.log('state 1:', this.state);
-    }, 1000);
+    // console.log('state:', this.state);
+    // setTimeout(() => {
+    //   console.log('state 1:', this.state);
+    // }, 1000);
+
     // Доступ до даних форми під час її сабміту
     this.props.onSubmit(this.state);
 
