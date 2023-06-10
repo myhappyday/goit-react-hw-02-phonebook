@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+
+import contacts from './data/contacts.json';
 import { Container, Title, Subtitle } from './App.styled';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
-import contacts from './data/contacts.json';
 import Filter from './Filter';
 
 class App extends Component {

@@ -23,7 +23,6 @@ export const Input = styled.input`
   margin-top: 8px;
   padding-left: 12px;
   border: 1px solid rgb(191, 192, 192);
-  /* filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.15)); */
   border-radius: 4px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
