@@ -14,7 +14,9 @@ class App extends Component {
   };
 
   onDuplicateContact = name => {
-    return this.state.contacts.some(contact => contact.name === name);
+    return this.state.contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
   };
 
   addContact = ({ name, number }) => {
